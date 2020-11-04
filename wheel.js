@@ -2,7 +2,6 @@
 const MY_TEAM = ["Agnetha", "Benny", "Björn", "Anni-Frid"];
 const MY_ADMIN = ["Stig"];
 
-
 var options = [];
 
 var startAngle = 0;
@@ -106,9 +105,10 @@ function drawRouletteWheel() {
 }
 
 function spin() {
-  spinAngleStart = Math.random() * 10 + 10;
+  spinAngleStart = 15;
   spinTime = 0;
-  spinTimeTotal = Math.random() * 3 + 6 * 1000;
+  spinTimeTotal = (Math.random() * 2939) + (2 * 2939);
+  // spinTimeTotal = 2939; // This looks to be about 1 exact rotation given a spinStartAngle of 15
   rotateWheel();
 }
 
