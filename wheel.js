@@ -107,7 +107,10 @@ function drawRouletteWheel() {
 function spin() {
   spinAngleStart = 15;
   spinTime = 0;
-  spinTimeTotal = (Math.random() * 2939) + (2 * 2939);
+  blockLength = Math.floor(2939 / options.length);
+  blocks = Math.floor(Math.random() * options.length);
+  landingBlockDisplacement = blocks * blockLength;
+  spinTimeTotal = landingBlockDisplacement + 3 + (2 * 2939);
   // spinTimeTotal = 2939; // This looks to be about 1 exact rotation given a spinStartAngle of 15
   rotateWheel();
 }
